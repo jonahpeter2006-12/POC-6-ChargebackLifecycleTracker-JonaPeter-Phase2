@@ -172,3 +172,32 @@ Result: PASS
 The event-level chargeback dataset is synthetic and is intended for proof-of-concept demonstration.
 
 Public sources provide contextual payment intelligence and are not represented as the source of the synthetic case records.
+## Phase 2 - Docker Local Validation
+
+| Test | Result |
+|---|---|
+| Backend Docker image builds successfully | PASS |
+| Frontend Docker image builds successfully | PASS |
+| Docker Compose starts both containers | PASS |
+| Backend API accessible through host port 8001 | PASS |
+| Frontend accessible through host port 3001 | PASS |
+| Dashboard loads chargeback records inside Docker | PASS |
+| Dashboard filters and case details work inside Docker | PASS |
+| Both containers restart successfully | PASS |
+| Dashboard remains accessible after container restart | PASS |
+
+### Docker Configuration
+
+- Backend container: `chargeback-backend`
+- Frontend container: `chargeback-frontend`
+- Backend mapping: `8001:8000`
+- Frontend mapping: `3001:3000`
+- Orchestration: Docker Compose
+
+### Phase 2 Local Validation Result
+
+**PASS - Local Docker validation completed.**
+
+Both containers were successfully built, started, tested, and restarted. The frontend successfully communicates with the FastAPI backend, and the dashboard displays the six synthetic chargeback records.
+
+Cloud deployment and production validation have not yet been performed.

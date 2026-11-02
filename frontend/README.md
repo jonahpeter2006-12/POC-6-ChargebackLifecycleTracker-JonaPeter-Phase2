@@ -74,3 +74,63 @@ Synthetic Chargeback Data
           |
           v
  Interactive Intelligence Dashboard
+ ## Setup and Run Instructions
+
+### Prerequisites
+- Node.js and npm for the frontend.
+- Python for the FastAPI backend.
+
+### Frontend Setup
+1. Open a terminal in the `frontend` folder.
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open `http://localhost:3000` in your browser.
+
+### Backend Setup
+
+1. Open a terminal in the `backend` folder.
+2. Activate the project's Python virtual environment.
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+
+
+
+## Screenshots
+![alt text](<Screenshot 2026-10-15 211611.png>)
+![alt text](<Screenshot 2026-10-15 211625.png>)
+![alt text](<Screenshot 2026-10-15 211637.png>)
+
+
+
+## AI Summary
+
+AI assistance was used to support the development and documentation of this proof of concept. The application demonstrates a chargeback lifecycle dashboard using a synthetic dataset, with contextual payment intelligence from public sources.
+
+
+
+## Future Enhancements
+
+- Integrate validated real-world chargeback data where authorized.
+- Add more detailed lifecycle and outcome analysis.
+- Improve payment intelligence and dispute pattern identification.
+- Expand automated testing and validation.
+- Explore deployment and production-readiness improvements.
+
+## Known Limitations
+
+- Event-level chargeback records are synthetic and intended for proof-of-concept demonstration.
+- Public sources provide contextual payment intelligence and are not the source of the synthetic case records.
+- Production data integration and deployment readiness require separate validation.
+- Backend setup and API configuration should be confirmed before handover.
