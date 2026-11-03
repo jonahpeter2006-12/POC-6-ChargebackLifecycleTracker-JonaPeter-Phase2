@@ -24,6 +24,9 @@ const STAGES = [
   "Final Decision",
 ];
 
+const API_URL =
+  "https://poc6-chargeback-backend.onrender.com";
+
 const money = (amount: number) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -55,16 +58,21 @@ export default function Home() {
     async function loadData() {
       try {
         const response = await fetch(
-          "http://localhost:8001/api/chargebacks"
+          `${API_URL}/api/chargebacks`
         );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch chargeback cases");
+          throw new Error(
+            `Failed to fetch chargeback cases: ${response.status}`
+          );
         }
 
         const data: ChargebackCase[] = await response.json();
 
-        if (active) setCases(data);
+        if (active) {
+          setCases(data);
+          setError(null);
+        }
       } catch (err) {
         console.error("Failed to load chargeback data:", err);
 
@@ -210,7 +218,9 @@ export default function Home() {
           <div className="brand-mark">C</div>
           <div>
             <p className="brand-name">CHARGEBACK</p>
-            <p className="brand-subtitle">LIFECYCLE INTELLIGENCE</p>
+            <p className="brand-subtitle">
+              LIFECYCLE INTELLIGENCE
+            </p>
           </div>
         </div>
 
