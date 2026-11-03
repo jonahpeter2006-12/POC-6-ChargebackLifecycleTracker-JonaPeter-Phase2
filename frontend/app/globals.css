@@ -1341,3 +1341,89 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile overflow protection */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  .command-center {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .page-content {
+    width: 90%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .topbar {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .brand-lockup,
+  .topbar-right {
+    min-width: 0;
+  }
+
+  .hero-section,
+  .hero-section > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .metrics-grid,
+  .lifecycle-track,
+  .distribution-grid,
+  .filter-bar {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .metric-card,
+  .distribution-card,
+  .stage-item {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .section-heading {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .table-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .case-table {
+    min-width: 760px;
+  }
+
+  .outcomes-strip,
+  .outcome-summary,
+  .page-footer {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
